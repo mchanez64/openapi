@@ -1,5 +1,4 @@
 openapi: "3.0.0"
-swagger: '2.0'
 info:
   version: 1.0.0
   title: Swagger Petstore
@@ -94,16 +93,14 @@ paths:
       summary: Create user
       description: This can only be done by the logged in user.
       operationId: createUser
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+        required: true
       produces:
-        - application/xml
         - application/json
-      parameters:
-        - in: body
-          name: body
-          description: Created user object
-          required: true
-          schema:
-            $ref: '#/components/schemas/User'
       responses:
         default:
           description: successful operation
