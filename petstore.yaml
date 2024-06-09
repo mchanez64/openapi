@@ -12,7 +12,7 @@ paths:
       summary: Create user
       operationId: createUser
       tags:
-      - user
+        - user
       requestBody:
         content:
           application/json:
