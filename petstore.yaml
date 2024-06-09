@@ -9,19 +9,17 @@ servers:
 paths:
   /user:
     post:
+	  summary: Create user
+      description: This can only be done by the logged in user.
       tags:
         - user
-      summary: Create user
-      description: This can only be done by the logged in user.
-      operationId: createUser
       produces:
-        - application/xml
         - application/json
       parameters:
-        - in: body
           name: body
+        - in: body
+		  required: true
           description: Created user object
-          required: true
           schema:
             $ref: "#/components/schemas/User"
       responses:
