@@ -88,19 +88,21 @@ paths:
                 $ref: "#/components/schemas/Error"
   /user:
     post:
-      summary: Create user
-      operationId: createUser
       tags:
         - user
+      summary: Create user
+      description: This can only be done by the logged in user.
+      operationId: createUser
       produces:
+        - application/xml
         - application/json
       parameters:
-        - name: body
-          in: body
-          required: true
+        - in: body
+          name: body
           description: Created user object
+          required: true
           schema:
-            $ref: "#/components/schemas/User"
+            $ref: '#/components/schemas/User'
       responses:
         default:
           description: successful operation
