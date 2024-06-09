@@ -7,6 +7,27 @@ info:
 servers:
   - url: http://petstore.swagger.io/v1
 paths:
+  /user:
+    post:
+      summary: Create user
+      operationId: createUser
+      tags:
+      - user
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+        required: true
+      responses:
+        '201':
+          description: Null response
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
   /pets:
     get:
       summary: List all pets
@@ -86,27 +107,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Error"
-  /user:
-    post:
-	  summary: Create user
-	  operationId: createUser
-    tags:
-      - user
-    requestBody:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/User'
-      required: true
-    responses:
-      '201':
-        description: Null response
-      default:
-        description: unexpected error
-        content:
-          application/json:
-            schema:
-              $ref: "#/components/schemas/Error"
 components:
   schemas:
     Pet:
