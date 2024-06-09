@@ -1,0 +1,6 @@
+class PetService {
+  
+    public constructor() {
+    }
+
+}
