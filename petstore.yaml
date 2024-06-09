@@ -110,6 +110,8 @@ components:
   schemas:
     User:
       type: object
+      required:
+      - id
       properties:
         id:
           type: integer
@@ -129,7 +131,6 @@ components:
         userStatus:
           type: integer
           format: int32
-          description: User Status
     Pet:
       type: object
       required:
