@@ -109,7 +109,6 @@ paths:
 components:
   schemas:
     User:
-    title: a User
       type: object
       properties:
         id:
