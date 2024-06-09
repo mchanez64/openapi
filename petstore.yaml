@@ -9,8 +9,8 @@ servers:
 paths:
   /user:
     post:
-	  summary: Create user
-      description: This can only be done by the logged in user.
+	    summary: Create user
+      operationId: createUser
       tags:
         - user
       produces:
