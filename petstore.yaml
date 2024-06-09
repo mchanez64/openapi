@@ -88,22 +88,25 @@ paths:
                 $ref: "#/components/schemas/Error"
   /user:
     post:
-      tags:
-        - user
-      summary: Create user
-      description: This can only be done by the logged in user.
-      operationId: createUser
-      requestBody:
+	  summary: Create user
+	  operationId: createUser
+    tags:
+      - user
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/User'
+      required: true
+    responses:
+      '201':
+        description: Null response
+      default:
+        description: unexpected error
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/User'
-        required: true
-      produces:
-        - application/json
-      responses:
-        default:
-          description: successful operation
+              $ref: "#/components/schemas/Error"
 components:
   schemas:
     Pet:
@@ -137,8 +140,6 @@ components:
           type: string
     User:
       type: object
-      required:
-        - id
       properties:
         id:
           type: integer

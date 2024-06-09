@@ -8,7 +8,7 @@ class UserService extends BaseService {
     }
   
     public async createUser(request, user: UserType) {
-        return await super.post(request, '/user', user);
+        return await super.post(request, '/v1/user', user);
     }
 }
 
