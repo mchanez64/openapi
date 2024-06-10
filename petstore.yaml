@@ -21,7 +21,16 @@ paths:
         required: true
       responses:
         '201':
-          description: Null response
+          description: The User response
+          headers:
+            x-next:
+              description: A link to the next page of responses
+              schema:
+                type: string
+          content:
+            application/json:    
+              schema:
+                $ref: "#/components/schemas/User"
         default:
           description: unexpected error
           content:
